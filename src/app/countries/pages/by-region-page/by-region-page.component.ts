@@ -15,7 +15,7 @@ export class ByRegionPageComponent implements OnInit {
 
   searchByRegion(term: string) {
     this.countriesService.searchBy(term, 'region').subscribe((countries) => {
-      this.countries = countries;
+      this.countries = countries as Country[];
     });
   }
 }

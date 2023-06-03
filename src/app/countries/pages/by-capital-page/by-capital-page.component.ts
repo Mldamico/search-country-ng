@@ -15,7 +15,7 @@ export class ByCapitalPageComponent implements OnInit {
 
   searchByCapital(term: string) {
     this.countriesService.searchBy(term, 'capital').subscribe((countries) => {
-      this.countries = countries;
+      this.countries = countries as Country[];
     });
   }
 }
