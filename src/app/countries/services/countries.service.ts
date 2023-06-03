@@ -8,9 +8,9 @@ export class CountriesService {
   private apiUrl: string = 'https://restcountries.com/v3.1';
   constructor(private httpClient: HttpClient) {}
 
-  searchCapital(term: string): Observable<Country[]> {
+  searchBy(term: string, filter: string = 'capital'): Observable<Country[]> {
     return this.httpClient
-      .get<Country[]>(`${this.apiUrl}/capital/${term}`)
+      .get<Country[]>(`${this.apiUrl}/${filter}/${term}`)
       .pipe(catchError((error) => of([])));
   }
 }
